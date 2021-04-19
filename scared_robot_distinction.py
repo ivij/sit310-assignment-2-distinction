@@ -15,7 +15,7 @@ class ScaredRobot(Node):
             msg.data = "TURNL:0050\n"
             self.publisher.publish(msg)
         
-        msg.data = "CONTF:0000\n"
+        msg.data = "CONTF:0100\n"
         self.publisher.publish(msg)
 
 
@@ -23,7 +23,7 @@ class ScaredRobot(Node):
         super().__init__('ScaredRobot')
         self.publisher = self.create_publisher(String, '/robot/control', 10)
         msg = String()
-        msg.data = "CONTF:0000\n"
+        msg.data = "CONTF:0100\n"
         self.publisher.publish(msg)
 
         self.subscription = self.create_subscription(
